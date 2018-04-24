@@ -1,0 +1,35 @@
+<%-- 
+    Document   : eng
+    Created on : Jan 31, 2018, 12:27:46 AM
+    Author     : Atif Aslam
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+   
+    <body style="background-color:greenyellow; margin-top: 0px;margin-left: 0px;">
+        <h1 align="center">Engineering</h1>
+         <table border="1" align="center">
+            <form:form method="post" action="/WebApplicationMVC_Project2/deptFPE/">
+                <tr><td><input type="submit" value="Food & Process Engineering"/></td></tr>           
+                    </form:form>
+                    <form:form method="post" action="/WebApplicationMVC_Project2/deptAE/">
+                <tr><td><input type="submit" value=" Agricultural Engineering"/></td></tr>           
+                    </form:form>
+                    <form:form method="post" action="/WebApplicationMVC_Project2/deptAR/">
+                <tr><td><input type="submit" value="Architecture"/></td></tr>           
+                    </form:form>
+                    <form:form method="post" action="/WebApplicationMVC_Project2/deptCE/">
+                <tr><td><input type="submit" value="Civil Engineering"/></td></tr>           
+                    </form:form>
+                    <form:form method="post" action="/WebApplicationMVC_Project2/deptME/">
+                <tr><td><input type="submit" value="Mechanical Engineering"/></td></tr>           
+                    </form:form>
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       
+     
+       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+    <context:annotation-config/>
+    <context:component-scan base-package="atif.aslam"/>
+    <mvc:annotation-driven/>
+ <!--The mvc resources tag does the magic-->
+    <mvc:resources mapping="/pictures/**" location="/pictures/"/>
+     <!-- to get red some exceptions-->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>  
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+ 
+    
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+          <property name="prefix" value="/WEB-INF/jsp/"/>
+          <property name="suffix" value=".jsp" />
+    </bean>
+    <bean id="propertyConfiguration" 
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/jdbc.properties"/>
+            
+              
+    </bean>
+
+    <bean id="messageSource" 
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/message"/>
+            
+           
+    </bean>
+
+    <bean id="dataSource" 
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.databaseurl}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"/>
+    
+    
+    <bean id="sessionFactory" 
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources" >
+            <list>
+                
+                <value>atif/aslam/deptAgriculture/Model/Deptag.hbm.xml</value>
+                <value>atif/aslam/deptCSE/Model/DeptCse.hbm.xml</value>
+                <value>atif/aslam/deptECE/Model/DeptEce.hbm.xml</value>
+                <value>atif/aslam/deptEEE/Model/DeptEee.hbm.xml</value>
+                <value>atif/aslam/deptDVM/Model/DeptDvm.hbm.xml</value>
+                <value>atif/aslam/deptFis/Model/DeptFis.hbm.xml</value>
+                <value>atif/aslam/deptACO/Model/DeptAco.hbm.xml</value>
+                <value>atif/aslam/deptMAN/Model/DeptMan.hbm.xml</value>
+                <value>atif/aslam/deptMAR/Model/DeptMar.hbm.xml</value>
+                <value>atif/aslam/deptFIN/Model/DeptFin.hbm.xml</value>
+                <value>atif/aslam/deptSOC/Model/DeptSoc.hbm.xml</value>
+                <value>atif/aslam/deptECO/Model/DeptEco.hbm.xml</value>
+                <value>atif/aslam/deptENG/Model/DeptEng.hbm.xml</value>
+                <value>atif/aslam/deptCHE/Model/DeptChe.hbm.xml</value>
+                <value>atif/aslam/deptPHY/Model/DeptPhy.hbm.xml</value>
+                <value>atif/aslam/deptMAT/Model/DeptMat.hbm.xml</value>
+                <value>atif/aslam/deptSTA/Model/DeptSta.hbm.xml</value>
+                 
+                 
+                <value>atif/aslam/deptFPE/Model/DeptFpe.hbm.xml</value>
+                <value>atif/aslam/deptAE/Model/DeptAe.hbm.xml</value>
+                <value>atif/aslam/deptAR/Model/DeptAr.hbm.xml</value>
+                <value>atif/aslam/deptCE/Model/DeptCe.hbm.xml</value>
+                <value>atif/aslam/deptME/Model/DeptMe.hbm.xml</value>
+                 
+            </list>
+  
+        </property>
+           
+     
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
+                hibernate.show_sql=true
+   
+            </value>
+        
+        </property>
+    
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+             
+    </bean>
+
+
+</beans>

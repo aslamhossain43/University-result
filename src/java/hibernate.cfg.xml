@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">system</property>
+   <!-- <mapping resource="atif/aslam/deptAgriculture/Model/Deptag.hbm.xml"/>
+    <mapping resource="atif/aslam/deptCSE/Model/DeptCse.hbm.xml"/>
+    <mapping resource="atif/aslam/deptECE/Model/DeptEce.hbm.xml"/>
+    <mapping resource="atif/aslam/deptEEE/Model/DeptEee.hbm.xml"/>
+    <mapping resource="atif/aslam/deptDVM/Model/DeptDvm.hbm.xml"/>
+    <mapping resource="atif/aslam/deptFis/Model/DeptFis.hbm.xml"/>
+    <mapping resource="atif/aslam/deptACO/Model/DeptAco.hbm.xml"/>
+    <mapping resource="atif/aslam/deptMAN/Model/DeptMan.hbm.xml"/>
+    <mapping resource="atif/aslam/deptMAR/Model/DeptMar.hbm.xml"/>
+    <mapping resource="atif/aslam/deptFIN/Model/DeptFin.hbm.xml"/>
+    <mapping resource="atif/aslam/deptSOC/Model/DeptSoc.hbm.xml"/>
+    <mapping resource="atif/aslam/deptECO/Model/DeptEco.hbm.xml"/>
+    <mapping resource="atif/aslam/deptENG/Model/DeptEng.hbm.xml"/>
+    <mapping resource="atif/aslam/deptCHE/Model/DeptChe.hbm.xml"/>
+    <mapping resource="atif/aslam/deptPHY/Model/DeptPhy.hbm.xml"/>
+    <mapping resource="atif/aslam/deptMAT/Model/DeptMat.hbm.xml"/>
+    <mapping resource="atif/aslam/deptSTA/Model/DeptSta.hbm.xml"/>
+    <mapping resource="atif/aslam/deptFPE/Model/DeptFpe.hbm.xml"/>
+    <mapping resource="atif/aslam/deptAE/Model/DeptAe.hbm.xml"/>
+    <mapping resource="atif/aslam/deptAR/Model/DeptAr.hbm.xml"/>
+    <mapping resource="atif/aslam/deptCE/Model/DeptCe.hbm.xml"/>
+    <mapping resource="atif/aslam/deptME/Model/DeptMe.hbm.xml"/>
+    -->
+   
+  </session-factory>
+</hibernate-configuration>
